@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>rahul@sandhuservices.dev</email>
+		<name>Rahul Sandhu</name>
+	</maintainer>
+	<use>
+		<flag name="caps">Enable Linux capabilities support</flag>
+		<flag name="cgroups">Enable Linux cgroups support</flag>
+		<flag name="sysv-utils">Build shutdown, reboot, soft-reboot, and halt</flag>
+	</use>
+	<upstream>
+		<bugs-to>https://github.com/davmac314/dinit/issues</bugs-to>
+		<changelog>https://github.com/davmac314/dinit/blob/master/NEWS</changelog>
+		<remote-id type="github">davmac314/dinit</remote-id>
+	</upstream>
+</pkgmetadata>
