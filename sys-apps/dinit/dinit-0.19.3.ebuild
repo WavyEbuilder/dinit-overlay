@@ -18,7 +18,7 @@ fi
 LICENSE="Apache-2.0"
 SLOT="0"
 
-IUSE="+caps +cgroups +sysv-utils test"
+IUSE="+caps +cgroups +init +sysv-utils test"
 RESTRICT="!test? ( test )"
 
 src_configure() {
@@ -29,4 +29,10 @@ src_configure() {
 		$(meson_use test igr-tests)
 	)
 	meson_src_configure
+}
+
+src_install() {
+	if use init; then
+		dosbin "${FILESDIR}"/init
+	fi
 }

@@ -31,3 +31,9 @@ src_configure() {
 	)
 	meson_src_configure
 }
+
+src_install() {
+	if use init; then
+		dosbin "${FILESDIR}"/init
+	fi
+}
