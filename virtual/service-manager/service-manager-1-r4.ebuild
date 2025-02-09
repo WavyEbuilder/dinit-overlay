@@ -12,7 +12,7 @@ RDEPEND="
 	!prefix-guest? (
 		|| (
 			|| (
-				sys-apps/dinit
+				sys-apps/dinit[init]
 				sys-apps/openrc
 				sys-apps/openrc-navi
 			)
