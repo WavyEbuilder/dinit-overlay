@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case "$1" in
+    start) exec /usr/libexec/udevd --daemon ;;
+    stop) udevadm control -e || : ;;
+    settle) exec udevadm settle ;;
+    trigger) exec udevadm trigger --action=add ;;
+esac
+
+exit 1
