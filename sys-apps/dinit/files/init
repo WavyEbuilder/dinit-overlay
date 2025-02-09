@@ -1,5 +1,4 @@
 #!/bin/sh
-# Taken from dinit-chimera
 #
 # Make sure dinit runs with a clean environment,
 # while also ensuring that PATH is set in container
@@ -33,12 +32,12 @@ unset dinit_console_level dinit_log_file
 # as we don't have a way to deal with the init env
 # after the fact, and there is no initramfs anyway
 if [ -n "${container+x}" ]; then
-    export PATH=@DEFAULT_PATH_ENV@
-    exec @DINIT_PATH@ "$@"
+    export PATH=/sbin:/usr/sbin:/bin:/usr/bin
+    exec "/sbin/dinit" "$@"
 fi
 
 # minimal defaults
-set -- PATH=@DEFAULT_PATH_ENV@ HOME=/ @DINIT_PATH@ "$@"
+set -- PATH=/sbin:/usr/sbin:/bin:/usr/bin HOME=/ "/sbin/dinit" "$@"
 
 # these need to be readable before we have procfs
 if [ "$dinit_early_debug" ]; then
