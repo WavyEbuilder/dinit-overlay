@@ -33,6 +33,8 @@ src_configure() {
 }
 
 src_install() {
+	meson_src_install
+
 	if use init; then
 		dosbin "${FILESDIR}"/init
 	fi
