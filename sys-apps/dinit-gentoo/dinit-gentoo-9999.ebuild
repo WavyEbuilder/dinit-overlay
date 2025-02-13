@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit meson
+inherit dinit meson
 
 DESCRIPTION="Dinit services for Gentoo Linux"
 HOMEPAGE="https://github.com/WavyEbuilder/dinit-gentoo"
@@ -23,4 +23,12 @@ src_install() {
 
 	exeinto /usr/libexec
 	doexe "${FILESDIR}/dinit-devd"
+
+	for i in {1..8}; do
+		dinit_enablesystemsrv tty${i}
+	done
+
+	keepdir /etc/dinit.d/boot.d
+	keepdir /usr/lib/dinit.d/boot.d
+	keepdir /usr/lib/dinit.d/user/boot.d
 }
