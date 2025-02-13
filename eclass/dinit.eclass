@@ -42,7 +42,7 @@ inherit toolchain-funcs
 dinit_get_systemsrvdir() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	/lib/dinit.d
+	echo "/lib/dinit.d"
 }
 
 # @FUNCTION: dinit_get_usersrvdir
@@ -53,7 +53,7 @@ dinit_get_systemsrvdir() {
 dinit_get_usersrvdir() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	/lib/dinit.d/user
+	echo "/lib/dinit.d/user"
 }
 
 # @FUNCTION: dinit_get_utildir
@@ -64,7 +64,7 @@ dinit_get_usersrvdir() {
 dinit_get_utildir() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	/lib/dinit
+	echo "/lib/dinit"
 }
 
 # @FUNCTION: dinit_dosrv
