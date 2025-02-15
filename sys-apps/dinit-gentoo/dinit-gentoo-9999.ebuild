@@ -18,6 +18,8 @@ fi
 LICENSE="BSD-2"
 SLOT="0"
 
+RDEPEND="virtual/tmpfiles"
+
 src_install() {
 	meson_src_install
 
