@@ -15,4 +15,5 @@ KEYWORDS="~amd64"
 src_install() {
 	dinit_dosrv "${FILESDIR}/ssh-keygen"
 	dinit_dosrv "${FILESDIR}/sshd"
+	dinit_dousersrv "${FILESDIR}/ssh-agent.user"
 }
