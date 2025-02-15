@@ -1,0 +1,8 @@
+# nftables service
+
+type               = scripted
+command            = /usr/libexec/nftables/nftables.sh load /var/lib/nftables/rules-save
+stop-command       = /usr/libexec/nftables/nftables.sh store /var/lib/nftables/rules-save
+before             = pre-network.target
+depends-on         = pre-local.target
+logfile            = /var/log/dinit/nftables-restore.log
