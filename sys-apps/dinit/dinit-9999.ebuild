@@ -21,6 +21,21 @@ SLOT="0"
 IUSE="+caps +cgroups +init +sysv-utils test"
 RESTRICT="!test? ( test )"
 
+RDEPEND="
+	init? (
+		!sys-apps/openrc[s6(-)]
+		!sys-apps/openrc-navi[s6(-)]
+		!sys-apps/systemd
+		!sys-apps/sysvinit
+	)
+	sysv-utils? (
+		!sys-apps/openrc[sysv-utils(-)]
+		!sys-apps/openrc-navi[sysv-utils(-)]
+		!sys-apps/systemd[sysv-utils(-)]
+		!sys-apps/sysvinit
+	)
+"
+
 src_configure() {
 	local emesonargs=(
 		$(meson_feature caps support-capabilities)
