@@ -1,0 +1,7 @@
+# dbus session bus user service
+
+type               = process
+logfile            = $HOME/.local/share/dinit/dbus.log
+command            = /usr/libexec/dbus-session.wrapper --print-address=4
+ready-notification = pipefd:4
+working-dir        = $HOME
