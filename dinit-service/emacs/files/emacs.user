@@ -1,0 +1,6 @@
+type         = process
+load-options = sub-vars
+logfile      = $HOME/.local/share/dinit/emacs.log
+command      = /usr/bin/emacs --fg-daemon
+stop-command = /usr/bin/emacsclient --eval "(kill-emacs)"
+restart      = true
