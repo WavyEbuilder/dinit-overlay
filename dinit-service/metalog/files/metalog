@@ -1,0 +1,10 @@
+# metalog daemon service
+
+type               = process
+command            = /usr/bin/metalog
+logfile            = /var/log/metalog.log
+before             = local.target
+depends-on         = pre-local.target
+restart            = true
+smooth-recovery    = true
+options            = starts-log
