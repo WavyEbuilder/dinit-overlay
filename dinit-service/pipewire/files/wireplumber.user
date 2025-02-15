@@ -1,0 +1,8 @@
+type            = process
+load-options    = sub-vars
+logfile         = $HOME/.local/share/dinit/wireplumber.log
+command         = wireplumber
+restart         = true
+smooth-recovery = true
+depends-on      = pipewire.user
+depends-on      = pipewire-pulse.user
