@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit dinit
+inherit dinit tmpfiles
 
 DESCRIPTION="Dinit service file for dbus"
 
@@ -18,4 +18,10 @@ src_install() {
 
 	exeinto /usr/libexec
 	doexe "${FILESDIR}/dbus-session.wrapper"
+
+	dotmpfiles "${FILESDIR}"/dbus.conf
+}
+
+pkg_postinst() {
+	tmpfiles_process dbus.conf
 }
