@@ -14,4 +14,5 @@ KEYWORDS="~amd64"
 
 src_install() {
 	dinit_dosrv "${FILESDIR}/chrony"
+	dinit_dosrv "${FILESDIR}/chronyd"
 }
