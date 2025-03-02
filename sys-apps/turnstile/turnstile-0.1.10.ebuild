@@ -20,6 +20,7 @@ LICENSE="BSD-2"
 SLOT="0"
 IUSE="dinit runit rundir man"
 
+BDEPEND="man? ( app-text/scdoc )"
 RDEPEND="sys-libs/pam"
 
 src_configure() {
