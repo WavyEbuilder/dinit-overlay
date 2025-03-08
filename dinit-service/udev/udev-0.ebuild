@@ -15,6 +15,9 @@ KEYWORDS="~amd64"
 src_install() {
 	dinit_dosrv "${FILESDIR}/udevd"
 
+        exeinto /usr/libexec
+        doexe "${FILESDIR}/dinit-devd"
+
 	exeinto /usr/libexec
 	doexe "${FILESDIR}/udevd.wrapper"
 }

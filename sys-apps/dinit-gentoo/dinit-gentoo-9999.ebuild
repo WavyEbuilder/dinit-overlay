@@ -23,9 +23,6 @@ RDEPEND="virtual/tmpfiles"
 src_install() {
 	meson_src_install
 
-	exeinto /usr/libexec
-	doexe "${FILESDIR}/dinit-devd"
-
 	for i in {1..8}; do
 		dinit_enablesystemsrv tty${i}
 	done

@@ -2,7 +2,7 @@
 
 case "$1" in
     start) exec /usr/lib/systemd/systemd-udevd --daemon ;;
-    stop) udevadm control -e || : ;;
+    stop) udevadm control -e; exit 0 ;;
     settle) exec udevadm settle ;;
     trigger) exec udevadm trigger --action=add ;;
 esac
