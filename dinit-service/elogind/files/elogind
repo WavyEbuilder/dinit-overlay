@@ -1,0 +1,7 @@
+type = process
+command = /usr/lib/elogind/elogind
+depends-ms = polkitd
+depends-on = dbus
+depends-on = local.target
+before = login.target
+smooth-recovery = true
