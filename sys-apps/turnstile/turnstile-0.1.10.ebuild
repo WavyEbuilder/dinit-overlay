@@ -31,3 +31,9 @@ src_configure() {
 	)
 	meson_src_configure
 }
+
+pkg_postinst() {
+	ewarn "To support session tracking, please append"
+	ewarn "'session optional pam_turnstile.so' to /etc/pam.d/system-login"
+	ewarn
+}
